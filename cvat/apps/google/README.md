@@ -11,6 +11,7 @@ This application allows you to integrate Google Analytics with CVAT
   * Navigate to `/cvat/cvat/apps/google/static/google/js` and use something like `vi` to edit the `enginePlugin.js` file
   * Paste your Tracking ID replacing the placeholders `<GA_Tracking_ID_Here>`.  Example code below:
   
+```
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<GA_Tracking_ID_Here>"></script>
 <script>
@@ -20,12 +21,14 @@ This application allows you to integrate Google Analytics with CVAT
 
   gtag('config', '<GA_Tracking_ID_Here>');
 </script>
+```
   
   * Save the changes
   * Navigate to `cvat/cvat/settings` and use something like `vi` to edit the `base.py` file
   * Scroll down to the `INSTALLED_APPS` section and remove the `#` from in front of the `cvat.apps.google` entry.  Example code below:
   
-`INSTALLED_APPS = [
+```
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,7 +40,8 @@ This application allows you to integrate Google Analytics with CVAT
     'cvat.apps.authentication',
     'cvat.apps.documentation',
     'cvat.apps.git',
- #   'cvat.apps.google',`
+ #   'cvat.apps.google',
+ ```
   
   * Save the changes
   * Do a `docker-compose` `down`, `build`, and `run` to get the changes included in CVAT.
