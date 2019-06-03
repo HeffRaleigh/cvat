@@ -11,15 +11,15 @@ This application allows you to integrate Google Analytics with CVAT
   * Navigate to `/cvat/cvat/apps/google/static/google/js` and use something like `vi` to edit the `enginePlugin.js` file
   * Paste your Tracking ID replacing the placeholders `<GA_Tracking_ID_Here>`.  Example code below:
   
-  `<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<GA_Tracking_ID_Here>"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  `<!-- Global site tag (gtag.js) - Google Analytics -->`
+  `<script async src="https://www.googletagmanager.com/gtag/js?id=<GA_Tracking_ID_Here>"></script>`
+  `<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', '<GA_Tracking_ID_Here>');
-</script>`
+    gtag('config', '<GA_Tracking_ID_Here>');
+  </script>`
   
   * Save the changes
   * Navigate to `cvat/cvat/settings` and use something like `vi` to edit the `base.py` file
